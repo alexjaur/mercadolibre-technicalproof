@@ -134,6 +134,26 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.UnitTest.Domains
                             new DistanceToSatellite(),
                         }
                     },
+                    
+                    // Three items into array BUT some of these is null
+                    new object[]
+                    {
+                        new DistanceToSatellite[]
+                        {
+                            new DistanceToSatellite(),
+                            new DistanceToSatellite(),
+                            null
+                        }
+                    },
+                    new object[]
+                    {
+                        new DistanceToSatellite[]
+                        {
+                            new DistanceToSatellite(),
+                            null,
+                            null
+                        }
+                    },
                 };
             }
 

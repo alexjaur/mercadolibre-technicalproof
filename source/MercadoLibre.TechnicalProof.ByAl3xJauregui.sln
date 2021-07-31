@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MercadoLibre.TechnicalProof
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.UnitTest", "MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.UnitTest\MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.UnitTest.csproj", "{4ACFEBD4-B626-45DC-902A-F138C1AB0D1D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp", "MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp\MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp.csproj", "{D51B37EA-FBE1-4DAF-8AFA-23F14F87B69F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4ACFEBD4-B626-45DC-902A-F138C1AB0D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ACFEBD4-B626-45DC-902A-F138C1AB0D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ACFEBD4-B626-45DC-902A-F138C1AB0D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51B37EA-FBE1-4DAF-8AFA-23F14F87B69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51B37EA-FBE1-4DAF-8AFA-23F14F87B69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51B37EA-FBE1-4DAF-8AFA-23F14F87B69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51B37EA-FBE1-4DAF-8AFA-23F14F87B69F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
