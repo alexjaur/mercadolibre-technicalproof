@@ -57,7 +57,7 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Domains.Implementation
                 throw new ArgumentException("Is null or empty.", nameof(distancesToSatellites));
             }
 
-            if (distancesToSatellites.Length != 3 || distancesToSatellites.GroupBy(x => x.Satellite).Count() != 3)
+            if (distancesToSatellites.Length != 3 || distancesToSatellites.Where(x => x?.Satellite != null).GroupBy(x => x.Satellite).Count() != 3)
             {
                 throw new ArgumentException("Exactly 3 distances are required for the different satellites.", nameof(distancesToSatellites));
             }
