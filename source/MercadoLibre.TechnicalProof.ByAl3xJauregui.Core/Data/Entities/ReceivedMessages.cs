@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Data.Entities
 {
-    class ReceivedMessages
+    public class ReceivedMessages
     {
         public ReceivedMessages()
         { }

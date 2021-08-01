@@ -9,7 +9,7 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Domains.Implementation
 {
     internal class TopSecretDomain : ITopSecretDomain
     {
-        private const string Separator = "¬";
+        internal const string Separator = "¬";
         private ITrilaterationDomain TrilaterationDomain { get; }
         private IMessageDomain MessageDomain { get; } 
         private ITopSecretDataProvider TopSecretDataProvider { get; }
@@ -117,6 +117,5 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Domains.Implementation
 
             return message;
         }
-
     }
 }
