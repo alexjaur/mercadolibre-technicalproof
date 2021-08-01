@@ -14,9 +14,9 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp.Controllers
     [Route("topsecret")]
     public class TopSecretController : ControllerBase
     {
-        private readonly ILogger<TopSecretController> _logger;
-        private readonly ITrilaterationDomain _trilaterationDomain;
-        private readonly IMessageDomain _messageDomain;
+        private ILogger<TopSecretController> Logger { get; }
+        private ITrilaterationDomain TrilaterationDomain { get; } 
+        private IMessageDomain MessageDomain { get; }
 
 
         public TopSecretController(
@@ -25,9 +25,9 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp.Controllers
             ILogger<TopSecretController> logger
         )
         {
-            _trilaterationDomain = trilaterationDomain;
-            _messageDomain = messageDomain;
-            _logger = logger;
+            TrilaterationDomain = trilaterationDomain;
+            MessageDomain = messageDomain;
+            Logger = logger;
         }
 
 
@@ -73,11 +73,11 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp.Controllers
 
             try
             {
-                locationPoint = _trilaterationDomain.GetLocation(distances);
+                locationPoint = TrilaterationDomain.GetLocation(distances);
             }
             catch (Exception exception)
             {
-                _logger.LogError(exception, "POST /topsecret; GetLocation");
+                Logger.LogError(exception, "POST /topsecret; GetLocation");
             }
 
             return locationPoint;
@@ -90,11 +90,11 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.WebApp.Controllers
             try
             {
                 string[][] messages = satellites.Select(x => x.Message).ToArray();
-                message = _messageDomain.GetMessage(messages);
+                message = MessageDomain.GetMessage(messages);
             }
             catch (Exception exception)
             {
-                _logger.LogError(exception, "POST /topsecret; GetMessage");
+                Logger.LogError(exception, "POST /topsecret; GetMessage");
             }
 
             return message;
