@@ -20,12 +20,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44303/topsecret",
+					"raw": "https://localhost:5001/topsecret",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44303",
+					"port": "5001",
 					"path": [
 						"topsecret"
 					]
