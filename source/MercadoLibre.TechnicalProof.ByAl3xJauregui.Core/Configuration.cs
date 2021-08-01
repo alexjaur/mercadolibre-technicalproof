@@ -1,7 +1,9 @@
-﻿using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.DataProviders;
+﻿using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Data.Contexts;
+using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.DataProviders;
 using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.DataProviders.Implementation;
 using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Domains;
 using MercadoLibre.TechnicalProof.ByAl3xJauregui.Core.Domains.Implementation;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
@@ -17,12 +19,20 @@ namespace MercadoLibre.TechnicalProof.ByAl3xJauregui.Core
         {
             // register Data Providers
             services.AddScoped<ISatelliteDataProvider, SatelliteDataProvider>();
+            services.AddScoped<ITopSecretDataProvider, TopSecretDataProvider>();
 
             // register Domains
             services.AddScoped<ITrilaterationDomain, TrilaterationDomain>();
             services.AddScoped<IMessageDomain, MessageDomain>();
+            services.AddScoped<ITopSecretDomain, TopSecretDomain>();
 
-            // return the same IServiceCollection (for fluent writing)
+            // register Database Contexts
+            services.AddDbContext<TopSecretDbContext>(options =>
+                options.UseInMemoryDatabase(databaseName: "TopSecretDb")
+            );
+
+            // return the same IServiceCollection
+            // (for fluent writing)
             return services;
         }
     }
